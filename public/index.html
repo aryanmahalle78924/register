@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEBCON 2022 Registration</title>
+    <link
+      rel="icon"
+      href="https://st2.depositphotos.com/3867453/7913/v/600/depositphotos_79132578-stock-illustration-letter-w-logo-icon-design.jpg"
+      type="image/x-icon"
+    />
+
+    <style>
+      body {
+        background-image: linear-gradient(#ac43d1, #eb69d5);
+        background-repeat: no-repeat;
+        height: 100vh;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      h2 {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      h4 {
+        color: aqua;
+        text-align: center;
+        font-size: 20px;
+        margin-top: -10px;
+      }
+
+      form {
+        background-color: transparent;
+        width: 400px;
+        height: 430px;
+        display: flex;
+
+        box-shadow: 5px 5px 5px 5px;
+        flex-direction: column;
+        justify-content: center;
+        transform: translate(130%, 10%);
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      form p {
+        text-align: center;
+        color: red;
+      }
+
+      label {
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid white;
+        text-align: center;
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      select {
+        background-color: white;
+        outline: none;
+        margin-bottom: 5px;
+      }
+
+      .footer p {
+        text-align: center;
+        margin-top: 55px;
+        color: white;
+      }
+
+      button {
+        background-color: aqua;
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        height: 30px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+
+      @media screen and (max-device-width: 480px) {
+        body {
+          font-size: 30px;
+        }
+        form {
+          transform: translate(18%, 10%);
+          width: 700px;
+          height: 750px;
+          transform: translate(17%, 60%);
+        }
+
+        input {
+          margin-bottom: 40px;
+          border-bottom: 1px solid white;
+        }
+
+        label {
+          margin-bottom: 30px;
+        }
+
+        button {
+          height: 50px;
+          margin-top: 20px;
+          border-radius: 10px;
+        }
+
+        .footer p {
+          margin-top: 490px;
+        }
+
+        select {
+          border: 1px solid white;
+          outline: none;
+        }
+        h4 {
+          font-size: 30px;
+        }
+        h2 {
+          font-size: 5 0px;
+        }
+      }
+
+      /* @media only screen and (max-width: 480px) {
+        h2 {
+          margin-top: 60px;
+          font-size: 50px;
+        }
+        h4 {
+          font-size: 30px;
+          margin-top: 20px;
+        }
+
+        form {
+          margin-top: 450px;
+          padding: 0px 60px;
+          width: 800px;
+          height: 800px;
+          margin-left: 100px;
+          font-size: 30px;
+          margin-right: 180px;
+        }
+
+        input {
+          margin-bottom: 60px;
+          font-size: 30px;
+        }
+
+        label {
+          font-size: 30px;
+        }
+
+        select {
+          margin-bottom: 20px;
+          font-size: 30px;
+        }
+
+        button {
+          font-size: 30px;
+          margin-top: -40px;
+        }
+
+        p {
+          margin-bottom: 40px;
+        }
+
+        .footer {
+          margin-top: 420px;
+          height: 190px;
+          background-color: currentColor;
+        }
+        .footer p {
+          margin-top: 35px;
+        }
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>🎉WEBCON REGISTRATION 2022🎉</h2>
+      <h4>VISUALIZE | DESIGN | CODE</h4>
+      <form action="/sign_up" method="post">
+        <label>Name of the participant</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter the name..."
+          required
+        />
+
+        <label>Mobile No. of the participant</label>
+        <input
+          type="text"
+          name="mobile"
+          id="mobile"
+          placeholder="Enter the phone no."
+          required
+        />
+
+        <!-- {{! <label>year class and section</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter the name..."
+          required
+        />
+        }} -->
+
+        <select name="year">
+          <option>--select--</option>
+          <option value="Third Year" name="year">Third Year</option>
+          <option value="Final Year" name="year">Final Year</option>
+        </select>
+
+        <select name="sec">
+          <option>--select--</option>
+          <option value="Section A" name="sec">Section A</option>
+          <option value="Section B" name="sec">Section B</option>
+        </select>
+
+        <select name="event">
+          <option>--select--</option>
+          <option name="event">Web Dazzler</option>
+          <option name="event">Progrmming Proto</option>
+        </select>
+
+        <p>If Selected programming select the language</p>
+        <select name="lang">
+          <option>--select--</option>
+          <option name="lang">Java</option>
+          <option name="lang">Python</option>
+        </select>
+
+        <!-- {{!
+        <p>Select any one Event</p>
+        <input type="checkbox" required />
+        <label>Web Dazzler</label>
+
+        <input type="checkbox" required />
+        <label>Programming Proto</label> }} -->
+
+        <p class="note">Note*: Registration Fees is Rs. 50/- .</p>
+
+        <label>Registered Name on Phonpe/Gpay/Paytm</label>
+        <input
+          type="text"
+          name="registeredName"
+          id="name"
+          placeholder="Enter the name..."
+          required
+        />
+
+        <button>Register</button>
+      </form>
+
+      <div class="footer"><p>Developed by Atharva Mahalle @2022</p></div>
+    </div>
+  </body>
+</html>
