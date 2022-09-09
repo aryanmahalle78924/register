@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
 
+let port = process.env.PORT || 3000
+
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,5 +55,5 @@ app
     });
     return res.redirect("index.html");
   })
-  .listen(3000);
+  .listen(port);
 console.log("Listening on the port 3000");
