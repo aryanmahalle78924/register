@@ -37,6 +37,7 @@ a {
   padding: 20px;
   text-align: center;
   align-items: center;
+  justify-content: center;
   transform: translate(190%, 40%);
   border-radius: 10px;
   text-decoration: none;
@@ -51,12 +52,26 @@ p {
   font-size: 24px;
   margin: 60px 300px;
   padding-left: 10px;
+  text-align: center;
 }
 
 img {
   width: 300px;
   height: 350px;
   transform: translate(133%, -30px);
+  text-align: center;
+}
+.or {
+  text-align: center;
+  justify-content: center;
+}
+
+.or p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -40px;
+  margin-right: 350px;
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -78,18 +93,25 @@ img {
   }
 
   a {
-    transform: translate(15%, -130%);
+    transform: translate(13%, -130%);
     padding: 40px;
     width: 570px;
     font-size: 36px;
   }
   p {
     width: 100%;
-    transform: translate(-35%, -170%);
+    transform: translate(-40%, -170%);
     font-size: 30px;
+    text-align: center;
+    align-items: center;
+    margin-left: 270px;
   }
   img {
     height: 500px;
-    margin-left: -170px;
+    margin-left: -200px;
+  }
+
+  .or p {
+    font-size: 50px;
   }
 }
