@@ -1,60 +1,59 @@
-// const express = require("express");
-// const bodyParser = require("body-parser");
-// const mongoose = require("mongoose");
-// const app = express();
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const app = express();
+let port = process.env.PORT || 3000;
+app.use(bodyParser.json());
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// let port = process.env.PORT || 3000
+mongoose.connect(
+  "mongodb+srv://Atharva:Amahalle123@cluster0.xftkbwv.mongodb.net/registerrr?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+  }
+);
 
-// app.use(bodyParser.json());
-// app.use(express.static("public"));
-// app.use(bodyParser.urlencoded({ extended: true }));
+const db = mongoose.connection;
 
-// mongoose.connect(
-//   "mongodb+srv://Atharva:Amahalle123@cluster0.xftkbwv.mongodb.net/registerrr?retryWrites=true&w=majority",
-//   {
-//     useNewUrlParser: true,
-//   }
-// );
+db.on("error", () => console.log("Error in connecting to db"));
+db.once("open", () => console.log("connected to the database"));
 
-// const db = mongoose.connection;
+app.post("/sign_up", (req, res) => {
+  let name = req.body.name;
+  let mobile = req.body.mobile;
+  let year = req.body.year;
+  let sec = req.body.sec;
+  let event = req.body.event;
+  let lang = req.body.lang;
+  let registeredName = req.body.registeredName;
 
-// db.on("error", () => console.log("Error in connecting to db"));
-// db.once("open", () => console.log("connected to the database"));
+  let data = {
+    name: name,
+    mobile: mobile,
+    year: year,
+    sec: sec,
+    event: event,
+    lang: lang,
+    registeredName: registeredName,
+  };
+  db.collection("registe").insertOne(data, (err, collection) => {
+    if (err) {
+      throw err;
+    }
+    console.log("Record entered successfully");
+  });
+  return res.redirect("https://p.paytm.me/xCTH/kur1qc08");
+});
 
-// app.post("/sign_up", (req, res) => {
-//   let name = req.body.name;
-//   let mobile = req.body.mobile;
-//   let year = req.body.year;
-//   let sec = req.body.sec;
-//   let event = req.body.event;
-//   let lang = req.body.lang;
-//   let registeredName = req.body.registeredName;
+app
+  .get("/", (req, res) => {
+    res.set({
+      "Allow-access-Allow-Origin": "*",
+    });
+    return res.redirect("index.html");
+  })
+  .listen(port);
+console.log("Listening on the port 3000");
 
-//   let data = {
-//     name: name,
-//     mobile: mobile,
-//     year: year,
-//     sec: sec,
-//     event: event,
-//     lang: lang,
-//     registeredName: registeredName,
-//   };
-//   db.collection("registe").insertOne(data, (err, collection) => {
-//     if (err) {
-//       throw err;
-//     }
-//     console.log("Reecord entered successfully");
-//   });
-//   return res.redirect("signup_success.html");
-// });
-
-// app
-//   .get("/", (req, res) => {
-//     res.set({
-//       "Allow-access-Allow-Origin": "*",
-//     });
-//     return res.redirect("index.html");
-//   })
-//   .listen(port);
-// console.log("Listening on the port 3000");
 
