@@ -266,9 +266,14 @@ form button {
   color: white;
   font-size: 20px;
 }
-form button a {
+form a {
   color: white;
   text-decoration: none;
+  background-color: #224952;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 form button:hover {
