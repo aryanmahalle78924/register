@@ -258,7 +258,7 @@ form p {
 
 form button {
   margin: 10px 10px;
-  padding: 10px;
+  padding: 0px;
   border-radius: 10px;
   outline: none;
   border: none;
