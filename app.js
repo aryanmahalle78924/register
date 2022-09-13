@@ -43,7 +43,7 @@ app.post("/sign_up", (req, res) => {
     }
     console.log("Record entered successfully");
   });
-  return res.redirect("https://p.paytm.me/xCTH/kur1qc08");
+  return res.redirect("signup_success.html");
 });
 
 app
